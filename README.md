@@ -21,3 +21,6 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 source ~/lio_ws/install/setup.bash
 ros2 launch eskf_lio eskf_lio.launch.xml
 ```
+
+https://github.com/user-attachments/assets/18353bfd-bcc3-487f-ab0a-ff9296fbf278
+
