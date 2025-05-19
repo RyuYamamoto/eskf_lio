@@ -3,8 +3,8 @@
 
   <set_parameter name="use_sim_time" value="true"/>
   <node pkg="eskf_lio" exec="eskf_lio_node" name="eskf_lio" output="screen" >
-    <remap from="points_raw" to="/os1_cloud_node/points"/>
-    <remap from="imu_raw" to="/os1_cloud_node/imu"/>
+    <remap from="points_raw" to="/robot/lidar"/>
+    <remap from="imu_raw" to="/robot/imu"/>
     <param from="$(var eskf_lio_config_path)"/>
   </node>
 
