@@ -115,9 +115,7 @@ std::vector<Sophus::SE3d> ESKFLio::predict(sensor_type::Measurement & measuremen
 {
   std::vector<Sophus::SE3d> imu_states;
   for (auto & imu : measurement.imu_queue) {
-    imu.linear_acceleration *= imu_->get_imu_scale();
     eskf_->predict(imu);
-
     auto state = eskf_->get_state().get_x();
     imu_states.emplace_back(Sophus::SE3d(state.block<3, 3>(0, 0), state.block<3, 1>(0, 3)));
   }
